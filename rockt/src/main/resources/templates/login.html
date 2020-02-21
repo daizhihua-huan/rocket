@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div>登录</div>
+    <form action="/submit" method="post">
+        <div>
+            username:<input name="user" id="user"/>
+        </div>
+
+        <div>
+            password:<input name="password" type="password" id="password"/>
+        </div>
+        <div>
+            <button  type="submit">
+                提交
+            </button>
+        </div>
+    </form>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="text/javascript">
+    alert(1);
+ // window.parent.postMessage({event: 'login-with-token', loginToken: 'wC8joy_4iLTkuMjjhysztB_i-anQDndiTQwYsktQ-OD'},'http://www.jiatingting.cn:3000');
+
+$(function() {
+// 任何需要执行的js特效
+       $('#submit').click(function () {
+           var usr = $('#user').val();
+           var password = $('#password').val();
+           console.log(password)
+           $.ajax({
+               //请求方式
+               type : "POST",
+               //请求的媒体类型
+               // contentType: "application/json;charset=UTF-8",
+               //请求地址http://www.jiatingting.cn:3000/api/v1/login
+               url : "/submit",
+               //数据，json字符串 JSON.stringify({"user":usr,'password':password})
+               data : {"user":usr,'password':password}
+               //请求成功
+               // success : function(result) {
+               //     console.log(result);
+               // },
+               // //请求失败，包含具体的错误信息
+               // error : function(e){
+               //     console.log(e.status);
+               //     console.log(e.responseText);
+               // }
+           });
+       })
+    });
+</script>
+</html>
