@@ -48,7 +48,7 @@ public class LoginController {
                 "window.parent.postMessage({" +
                 "event: 'login-with-token', " +
                 "loginToken: '"+token+"'}"+
-                ",'http://www.jiatingting.cn:3000');" +
+                ",'you name url');" +
                         "</script>";
                 PrintWriter writer = response.getWriter();
                 String srt = "<script type='text/javascript'>alert(1)</script>";
